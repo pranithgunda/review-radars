@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Review Radars</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Review Radars</title>
 </head>
+
 <body>
-  <body class="flex-column min-100-vh">
-    <header class="hero">
-      <h1 class="app-title"><i class="fab fa-github"></i> Review Radars</h1>
-      <p>Review Amazon Products
-      </p>
-    </header>
+      
+      <div id="app">
+
+        <div class="view view-main">
+
+          <div data-name="home" class="page">
   
-    <main class="flex-row justify-space-between">
-      <div class="col-12 col-md-4">
+            <nav class="navbar">
+              <div class="navbar-bg"></div>
+              <div class="navbar-inner">
+                <div class="title">Review Radars</div>
+                <img class="profile" src="./images/1000_F_237388985_O3pTTk9etehIuR8vllpR4RToTB0mMvrb.jpg" alt="">
+              </div>
+            </nav>
   
-        <div class="card">
-          <h3 class="card-header text-uppercase">Search By User</h3>
-          <form id="user-form" class="card-body">
-            <label class="form-label" for="username">Username</label>
-            <input name="username" id="username" type="text" autofocus="true" class="form-input" />
-            <button type="submit" class="btn">Get User</button>
-          </form>
+            <div class="toolbar toolbar-bottom">
+              <div class="toolbar-inner">
+                <a href="#" class="link">Link 1</a>
+                <a href="#" class="link">Link 2</a>
+              </div>
+            </div>
+            <div class="page-content">
+              <p>Content</p>
+              <a href="">About app</a>
+            </div>
+          </div>
         </div>
       </div>
-  
-      <div class="col-12 col-md-8">
-        <h2 class="subtitle">TO BE FILLED: <span id="repo-search-term"></span></h2>
-        <div id="repos-container" class="list-group"></div>
-      </div>
-    </main>
    
     </body>
   </html>
 </body>
+
 </html>
