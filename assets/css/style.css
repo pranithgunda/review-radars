@@ -12,7 +12,7 @@
   }
   
   body {
-    background-color: var(--primary);
+    background-color: #fff;
     margin: 0;
     padding: 0;
     font-family: "IBM Plex Sans", sans-serif;
@@ -21,7 +21,7 @@
     font-size: 16px;
   }
   
-  h1,
+
   h2,
   h3,
   h4,
@@ -35,7 +35,7 @@
   
   main {
     margin: 20px auto;
-    width: 94%;
+    /* width: 94%; */
   }
   
   p {
@@ -148,8 +148,8 @@
   /* CARDS */
   .card {
     margin: 0 0 20px 0;
-    border: 3px solid var(--dark);
-    border-radius: var(--border-radius);
+    /* border: 3px solid var(--dark); */
+    /* border-radius: var(--border-radius); */
   }
   
   .card-header {
@@ -201,8 +201,8 @@
   
   /* FLEX CONTENT */
   .flex-row {
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
   }
   
   .flex-column {
@@ -499,6 +499,16 @@
       flex: 0 0 100%;
     }
   }
-  
+  .container-header {
+    background-color: #232f3e;
+    color:#fff;
+
+  }
+
+  .w3-btn{
+    border-radius: 2px;
+    margin-top:2px;
+    margin-bottom: 2px;
+  }
   
   
