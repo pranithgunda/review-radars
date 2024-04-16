@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
-    <!-- Link stylesheet with w3CSS Framework -->
-    <link rel = "stylesheet" href = "https://www.w3schools.com/w3css/4/w3.css">
-    <!-- Link user stylesheet -->
-    <link rel = "stylesheet" href = "assets/css/style.css">
-    <title>Review Radars</title>
-  </head>
-  <body>
-    <header class = "w3-container container-header">
-      <h1 class = "w3-xxlarge">Review Radars!</h1>
-      <p class = "w3-xlarge">Search products for details, reviews and top ratings ✨</p>
-    </header>
-    <main class = "flex-row justify-space-between">
-      <!-- Div to search product -->
-      <div class = "w3-container">
-        <div class = "w3-row w3-container">
-          <div class = "w3-col s3 w3-center">
-            <div class = "w3-card-4">
-              <header class = "w3-container w3-grey">
-                <h3>Search Products</h3>
-              </header>
-              <div class = "w3-container">
-                <form id = "user-form" class = "card-body">
-                  <label class ="form-label" for ="products">Products</label>
-                  <input name = "productname" id = "product-name" type = "text" autofocus = "true" class="form-input"/>
-                </form>
-              </div>
-              <footer class = "w3-container">
-                <button type = "submit" class = "btn" id = "search-button">Search</button>
-              </footer>
-            </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Radars</title>
+  <!-- Link stylesheet with W3.CSS Framework -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- Link user stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="w3-container container-header">
+    <h1 class="w3-xxlarge">Review Radars!</h1>
+    <p class="w3-xlarge">Search products for details, reviews, and top ratings ✨</p>
+  </header>
+  <main class="w3-container">
+    <div class="w3-row">
+      <!-- Div to search product (occupies one-fourth of the screen width) -->
+      <div class="w3-col s12 m6 l3">
+        <div class="w3-card-4">
+          <header class="w3-container w3-grey">
+            <h3>Search Products</h3>
+          </header>
+          <div class="w3-container" style="display: flex;">
+            <form id="user-form" class="card-body" style="display: flex; align-items: center; flex-grow: 1;">
+              <input name="productname" placeholder="Search products" id="product-name" type="text" autofocus="true" class="form-input" /> 
+              <button type="submit" class="btn w3-padding-0 w3-round" id="search-button"> 
+                🔍 
+              </button>
+            </form>
           </div>
-          <!-- Div to display product search results -->
-          <div class = "w3-container w3-col s9">
+        </div>
+      </div>
+      <!-- Div to display product search results (occupies three-fourths of the screen width) -->
+      <div class=" w3-container w3-col s12 m6 l9">
+        <div class="w3-card-4">
+          <header class="w3-container w3-grey">
             <h3>Showing products for:</h3>
-            <button class = "w3-btn w3-block w3-grey w3-left-align">Product One</button>
+          </header>
+          <div class="w3-container">
+            <button class="w3-btn w3-block w3-grey w3-left-align">Product One</button>
           </div>
+        </div>
       </div>
     </div>
   </main>
