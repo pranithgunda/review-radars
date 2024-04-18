@@ -1,6 +1,7 @@
 const searchText = document.getElementById('product-name');
 const searchButton = document.getElementById('search-button');
 const productsListEl =  document.getElementById('products-container');
+const productsSearchTextEl =  document.getElementById('products-search');
 
 // add Click event on search button to invoke API and fetch products
 
@@ -27,6 +28,7 @@ async function fetchProducts(event){
     .then(function (products){
         const productsList =  document.getElementById('products-container');
         productsList.textContent = '';
+        productsSearchTextEl.textContent = `Showing products for: ${productName}`;
         // Manipulate DOM to present with list of product search results
         for(let i = 0; i<products.length;i++){
             const productEl = document.createElement('button');
@@ -47,6 +49,9 @@ async function fetchProducts(event){
             productsListEl.appendChild(divEl);
 
 }
+})
+.catch(function (error){
+    productsSearchTextEl.textContent = 'Unable to retrieve Product Search results. Please try again';
 })
     
 }
