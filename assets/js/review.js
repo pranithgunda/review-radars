@@ -1,3 +1,5 @@
+
+const displayHeaderEl = document.getElementById('display-heading');
 // EventListener to show loader icon while document load is still in progress
 document.addEventListener("readystatechange",(event) =>{
     if(document.readyState !== "complete"){
@@ -12,6 +14,8 @@ document.addEventListener("readystatechange",(event) =>{
 
 // Invoke API On document load
 document.getElementById('rating-review-container').onload = fetchProductRatingsAndReviews();
+
+// Function to retrieve product ratings and reviews
 async function fetchProductRatingsAndReviews(){
     const ratingReviewEl = document.getElementById('rating-review-container');
     let productInfo = {};
@@ -55,4 +59,7 @@ async function fetchProductRatingsAndReviews(){
             reviewsEl.appendChild(reviewEl);
         }
     } )
+    .catch(function (error){
+        displayHeaderEl.textContent = 'Unable to retrieve Product Ratings & Reviews. Please try again.'
+    })
 }
