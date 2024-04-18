@@ -1,3 +1,5 @@
+
+// EventListner on search to present modal to user if search text is null
 document.getElementById('search-button').addEventListener('click', function(event) {
     var productNameInput = document.getElementById('product-name');
     if (productNameInput.value.trim() === '') {
