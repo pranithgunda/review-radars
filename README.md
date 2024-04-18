@@ -20,7 +20,7 @@ The site is built on HTML, W3CSS framework, CSS and JavaScript.Server Side APIs 
 
 ## Link to Deployed Site
 
-coming soon
+[Review Radars Site Link](https://pranithgunda.github.io/review-radars/)
 
 
 
