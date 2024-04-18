@@ -22,12 +22,12 @@ async function fetchProducts(event){
         return response.json();
     })
     .then(function (data){
-        console.log(data.data);
         return data.data;      
     })
     .then(function (products){
         const productsList =  document.getElementById('products-container');
         productsList.textContent = '';
+        // Manipulate DOM to present with list of product search results
         for(let i = 0; i<products.length;i++){
             const productEl = document.createElement('button');
             productEl.setAttribute('data-index',i);
@@ -40,9 +40,10 @@ async function fetchProducts(event){
             const divEl = document.createElement('div');
             divEl.setAttribute('class','w3-container w3-hide');
             divEl.setAttribute('id',i);
-            divEl.innerHTML=`<p>Price:${products[i].price}.</p>
+            divEl.innerHTML=`<p>Price: ${products[i].price}.</p>
             <img src=${products[i].image}>
-            <p>Rating:${products[i].stars}</p>`
+            <p>Rating: ${products[i].stars}/5</p>
+            <a id = ${products[i].asin} href="review.html" target="_blank">Click here for ratings and reviews</a>`
             productsListEl.appendChild(divEl);
 
 }
@@ -54,15 +55,27 @@ async function fetchProducts(event){
 // Expand and Collapse the accordion on click to view product information
 
 productsListEl.addEventListener('click', function(event){
-    const targetButtonEl = event.target;
-    const indexAttribute = targetButtonEl.getAttribute('data-index');
-    const productInfoEl = document.getElementById(indexAttribute);
-    if(productInfoEl.className.indexOf("w3-show")==-1){
-        productInfoEl.className = productInfoEl.className.replace(" w3-hide","");
-        productInfoEl.className += " w3-show";
-    } else{
-        productInfoEl.className = productInfoEl.className.replace(" w3-show","");
-        productInfoEl.className += " w3-hide";
+    const targetEl = event.target;
+    const targetElType = event.target.tagName;
+    if(targetElType.startsWith('A')){
+        const productId =  targetEl.getAttribute('id');
+        // Instantiate productInfo object
+        const productInfo = {id:productId};
+        localStorage.clear();
+        // Save productInfo object to local storage
+        localStorage.setItem('productInfo',JSON.stringify(productInfo));
+    }else{
+        const indexAttribute = targetEl.getAttribute('data-index');
+        const productInfoEl = document.getElementById(indexAttribute);
+        //Expand/collapse the accordion by updating the class name
+        if(productInfoEl.className.indexOf("w3-show")==-1){
+            productInfoEl.className = productInfoEl.className.replace(" w3-hide","");
+            productInfoEl.className += " w3-show";
+        } else{
+            productInfoEl.className = productInfoEl.className.replace(" w3-show","");
+            productInfoEl.className += " w3-hide";
+        }
     }
 });
+
 

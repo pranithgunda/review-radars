@@ -49,11 +49,7 @@
   p {
     font-size: 1.2rem;
   }
-  
-
-
-
-  
+    
   .card-body {
     padding: 2.5%;
   }
@@ -96,4 +92,37 @@
   #search-button:hover {
     opacity: 0.5;
   }
+
+  a{
+    color:#0000ff;
+  }
   
+  #loader{
+    position:absolute;
+    left:50%;
+    top:50%;
+    z-index:1;
+    width:120px;
+    height:120px;
+    margin:-76px 0 0 -76px;
+    border:16px solid #f3f3f3;
+    border-radius:50%;
+    border-top: 16px solid #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    animation:spin 2s linear infinite;
+  }
+
+  @keyframes spin{
+    100%{
+      transform:rotate(360deg);
+    }
+  }
+
+  img{
+    max-width:100%;
+    height:auto;
+  }
+
+  img:hover{
+    opacity:0.5;
+  }
